@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilyas Abdul Mannan | Full Stack Software Developer</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Decorative Background -->
+    <div class="bg-aura">
+        <div class="aura-blob aura-1"></div>
+        <div class="aura-blob aura-2"></div>
+    </div>
+
+    <!-- Navigation Overlay (Dropdown) -->
+    <div id="nav-overlay">
+        <nav class="drawer-nav">
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#journey">Journey</a>
+            <a href="#certs">Credentials</a>
+            <a href="#work">Work</a>
+            <a href="#contact" class="btn-obsidian">Connect</a>
+        </nav>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="../assets/img/techsagehub_logo_official.png" alt="TechsageHub Logo"
+                    style="height: 32px; border-radius: 4px;">
+                Techsage<span>Hub</span>
+            </a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#skills">Skills</a>
+                <a href="#journey">Journey</a>
+                <a href="#certs">Credentials</a>
+                <a href="#work">Work</a>
+                <a href="#contact" class="btn-obsidian">Connect</a>
+            </div>
+            <button id="mobile-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <span class="section-meta">Full Stack Software Developer</span>
+                <h1 class="hero-title">Ilyas Abdul <br><span class="highlight">Mannan</span></h1>
+                <p class="hero-desc">
+                    Full Stack Software Engineer specializing in <strong>.NET development</strong>. I build robust, scalable applications with clean architecture and modern technologies. Passionate about creating seamless user experiences and solving complex technical challenges.
+                </p>
+                <div class="hero-btns">
+                    <a href="#work" class="btn-obsidian">Explore My Work</a>
+                    <a href="#contact"
+                        style="color:var(--text-main); text-decoration:none; font-weight:700; display:flex; align-items:center; gap:10px; margin-left: 20px;">Get
+                        In Touch <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="../assets/img/pfp.jpg" alt="Ilyas Abdul Mannan"
+                    style="width:100%; height:100%; object-fit:cover; object-position: center 25%; opacity: 1; filter: contrast(1.05) brightness(1.05);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Bento Section -->
+    <section id="skills" class="skills-bento">
+        <div class="container">
+            <span class="section-meta">Core Competencies</span>
+            <h2 class="section-title">The Arsenal.</h2>
+
+            <div class="bento-shell">
+                <!-- Large Skill Overview Card -->
+                <div class="bento-item grid-arsenal">
+                    <div class="arsenal-header">
+                        <h3><i class="fas fa-microchip"></i> Backend Mastery</h3>
+                        <span style="color:var(--text-muted); font-weight:700;">2+ YEARS XP</span>
+                    </div>
+
+                    <div class="proficiency-bar">
+                        <div class="bar-meta"><span>ASP.NET Core / .NET 9</span> <span>95%</span></div>
+                        <div class="bar-track">
+                            <div class="bar-fill" data-width="95%" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="proficiency-bar">
+                        <div class="bar-meta"><span>EF Core & PostgreSQL</span> <span>90%</span></div>
+                        <div class="bar-track">
+                            <div class="bar-fill" data-width="90%" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="proficiency-bar">
+                        <div class="bar-meta"><span>Blazor WebAssembly</span> <span>85%</span></div>
+                        <div class="bar-track">
+                            <div class="bar-fill" data-width="85%" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="proficiency-bar">
+                        <div class="bar-meta"><span>Microservices & REST APIs</span> <span>88%</span></div>
+                        <div class="bar-track">
+                            <div class="bar-fill" data-width="88%" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Radar Chart with Tech Logos -->
+                <div class="bento-item grid-radar">
+                    <div class="radar-container">
+                        <svg class="radar-chart" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Radar Grid (Hexagon for 6 points) -->
+                            <g class="radar-grid">
+                                <!-- Outer hexagon -->
+                                <polygon points="150,40 230,90 230,190 150,240 70,190 70,90" fill="none"
+                                    stroke="rgba(79, 70, 229, 0.15)" stroke-width="1" />
+                                <!-- Middle hexagon -->
+                                <polygon points="150,70 200,105 200,175 150,210 100,175 100,105" fill="none"
+                                    stroke="rgba(79, 70, 229, 0.15)" stroke-width="1" />
+                                <!-- Inner hexagon -->
+                                <polygon points="150,100 170,115 170,165 150,180 130,165 130,115" fill="none"
+                                    stroke="rgba(79, 70, 229, 0.15)" stroke-width="1" />
+
+                                <!-- Radar lines from center -->
+                                <line x1="150" y1="150" x2="150" y2="40" stroke="rgba(79, 70, 229, 0.1)"
+                                    stroke-width="1" />
+                                <line x1="150" y1="150" x2="230" y2="90" stroke="rgba(79, 70, 229, 0.1)"
+                                    stroke-width="1" />
+                                <line x1="150" y1="150" x2="230" y2="190" stroke="rgba(79, 70, 229, 0.1)"
+                                    stroke-width="1" />
+                                <line x1="150" y1="150" x2="150" y2="240" stroke="rgba(79, 70, 229, 0.1)"
+                                    stroke-width="1" />
+                                <line x1="150" y1="150" x2="70" y2="190" stroke="rgba(79, 70, 229, 0.1)"
+                                    stroke-width="1" />
+                                <line x1="150" y1="150" x2="70" y2="90" stroke="rgba(79, 70, 229, 0.1)"
+                                    stroke-width="1" />
+                            </g>
+
+                            <!-- Skill polygon (filled area) -->
+                            <polygon class="radar-fill" points="150,55 215,95 215,185 150,225 85,185 85,95"
+                                fill="rgba(79, 70, 229, 0.2)" stroke="rgb(79, 70, 229)" stroke-width="2" />
+
+                            <!-- Technology points -->
+                            <circle class="radar-point" cx="150" cy="55" r="5" fill="#4f46e5" />
+                            <circle class="radar-point" cx="215" cy="95" r="5" fill="#4f46e5" />
+                            <circle class="radar-point" cx="215" cy="185" r="5" fill="#4f46e5" />
+                            <circle class="radar-point" cx="150" cy="225" r="5" fill="#4f46e5" />
+                            <circle class="radar-point" cx="85" cy="185" r="5" fill="#4f46e5" />
+                            <circle class="radar-point" cx="85" cy="95" r="5" fill="#4f46e5" />
+                        </svg>
+
+                        <!-- Technology Icons & Labels -->
+                        <div class="tech-icon-label" style="top: 2%; left: 50%; transform: translateX(-50%);">
+                            <div class="tech-icon">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <span>C#</span>
+                        </div>
+                        <div class="tech-icon-label" style="top: 20%; right: 5%;">
+                            <div class="tech-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <span>ASP.NET Core</span>
+                        </div>
+                        <div class="tech-icon-label" style="bottom: 20%; right: 5%;">
+                            <div class="tech-icon">
+                                <i class="fab fa-node-js"></i>
+                            </div>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-icon-label" style="bottom: 2%; left: 50%; transform: translateX(-50%);">
+                            <div class="tech-icon">
+                                <i class="fab fa-js-square"></i>
+                            </div>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-icon-label" style="bottom: 20%; left: 5%;">
+                            <div class="tech-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <span>MySQL</span>
+                        </div>
+                        <div class="tech-icon-label" style="top: 20%; left: 5%;">
+                            <div class="tech-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <span>SQL Server</span>
+                        </div>
+                    </div>
+                    <h4 style="margin-top: 20px; font-size: 1.1rem;">Architecture Radar</h4>
+                    <p style="color:var(--text-muted); font-size:0.75rem; margin-top:8px;">SOLID • Clean Architecture •
+                        DDD • RBAC</p>
+                </div>
+
+                <!-- Tools & Utilities -->
+                <div class="bento-item grid-tools">
+                    <h3 style="font-size:1.1rem; margin-bottom:15px;"><i class="fas fa-toolbox"></i> Core Tech Tools
+                    </h3>
+                    <div style="display:flex; flex-wrap:wrap; gap:10px;">
+                        <span class="tech-tag">Git / GitHub</span>
+                        <span class="tech-tag">Cloudinary</span>
+                        <span class="tech-tag">Swagger</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills / Meta -->
+                <div class="bento-item grid-tools" style="background:var(--accent-primary); color:white;">
+                    <h3 style="font-size:1.2rem; margin-bottom:20px; color:white;"><i class="fas fa-brain"></i>
+                        Professional Expertise</h3>
+                    <p style="font-weight:600;">Technical Leadership • Agile Scrum • Problem Solving • Technical
+                        Collaboration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Journey (Pulse Timeline) -->
+    <section id="journey" class="journey-section">
+        <div class="container">
+            <span class="section-meta">Career Journey</span>
+            <h2 class="section-title">The Blueprint.</h2>
+
+            <div class="timeline-container">
+                <!-- Current Role -->
+                <div class="timeline-event">
+                    <div class="event-dot"></div>
+                    <div class="event-card">
+                        <div class="event-header">
+                            <div class="event-title">
+                                <h3>Full Stack Software Developer</h3>
+                                <span class="event-company">WhitteIntel Ltd, Lagos</span>
+                            </div>
+                            <span class="event-date">2025 – PRESENT</span>
+                        </div>
+                        <div class="event-body">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Optimized PostgreSQL queries for enterprise-scale data, reducing latency by <strong>90%</strong>.</li>
+                                <li><i class="fas fa-check-circle"></i> Architected core billing and HR modules using <strong>.NET</strong>.</li>
+                                <li><i class="fas fa-check-circle"></i> Developed specialized middleware for cross-platform data synchronization.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Role -->
+                <div class="timeline-event">
+                    <div class="event-dot"></div>
+                    <div class="event-card">
+                        <div class="event-header">
+                            <div class="event-title">
+                                <h3>Full Stack Software Developer</h3>
+                                <span class="event-company">MGQS IT Research Lab, Lagos</span>
+                            </div>
+                            <span class="event-date">2024 – 2025</span>
+                        </div>
+                        <div class="event-body">
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> <strong>Project Lead:</strong> Directed development for the <strong>MGQS Education Portal</strong>.</li>
+                                <li><i class="fas fa-check-circle"></i> Implemented a proprietary <strong>QR-based attendance system</strong>, automating 85% of staff tracking.</li>
+                                <li><i class="fas fa-check-circle"></i> Spearheaded the <strong>Digital Document Vault</strong> with high-security RBAC protocols.</li>
+                                <li><i class="fas fa-check-circle"></i> Enforced strict Clean Architecture standards across project modules.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certs" class="certifications">
+        <div class="container">
+            <span class="section-meta">Validated Excellence</span>
+            <h2 class="section-title">Credentials.</h2>
+
+            <div class="cert-gallery">
+                <div class="cert-card-unique">
+                    <div class="cert-display">
+                        <img src="assets/img/microsoft_certificate.png" alt="Foundational C#">
+                    </div>
+                    <div class="cert-content">
+                        <h4 style="font-size:1.4rem; margin-bottom:10px;">Foundational C#</h4>
+                        <p style="color:var(--text-muted);">Verified by <strong>freeCodeCamp & Microsoft</strong></p>
+                        <span
+                            style="font-size:0.8rem; font-weight:700; color:var(--accent-primary); margin-top:15px; display:block;">EARNED
+                            FEB 2025</span>
+                    </div>
+                </div>
+
+                <div class="cert-card-unique">
+                    <div class="cert-display">
+                        <img src="assets/img/mgqs_certificate.png" alt="Software Engineering Mastery">
+                    </div>
+                    <div class="cert-content">
+                        <h4 style="font-size:1.4rem; margin-bottom:10px;">Software Engineering Mastery</h4>
+                        <p style="color:var(--text-muted);">Master Track • <strong>MGQS IT IT Research Lab</strong></p>
+                        <span
+                            style="font-size:0.8rem; font-weight:700; color:var(--accent-primary); margin-top:15px; display:block;">EARNED
+                            SEPT 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects (Scale Section) -->
+    <section id="work" class="work-section">
+        <div class="container">
+            <span class="section-meta">Featured Engineering</span>
+            <h2 class="section-title">Built for Scale.</h2>
+
+            <div class="bento-shell">
+                <!-- Project Card 1 -->
+                <div class="bento-item grid-project">
+                    <div class="project-visual">
+                        <img src="assets/img/staffhub_preview.png" alt="StaffHubSystem">
+                    </div>
+                    <div class="project-info">
+                        <h3 style="font-size:1.5rem; margin-bottom:10px;">StaffHubSystem</h3>
+                        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">
+                            Enterprise workforce management with document vault and real-time attendance.
+                        </p>
+                        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:15px;">
+                            <span class="tech-tag" style="font-size:0.7rem;">.NET Core</span>
+                            <span class="tech-tag" style="font-size:0.7rem;">EF Core</span>
+                        </div>
+                        <div class="metric-grid" style="margin-top:0; grid-template-columns: repeat(2, 1fr);">
+                            <div class="metric-box" style="padding:10px;"><span class="metric-val"
+                                    style="font-size:1.1rem;">100%</span><span class="metric-lbl"
+                                    style="font-size:0.6rem;">Vault</span></div>
+                            <div class="metric-box" style="padding:10px;"><span class="metric-val"
+                                    style="font-size:1.1rem;">A+</span><span class="metric-lbl"
+                                    style="font-size:0.6rem;">Rating</span></div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/TechSageHub/Staff-Hub-System" target="_blank"
+                                class="btn-project-action primary">Live Demo</a>
+                            <a href="https://github.com/TechSageHub/Staff-Hub-System" target="_blank"
+                                class="btn-project-action outline"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bento-item grid-project">
+                    <div class="project-visual">
+                        <img src="assets/img/mgqs_preview.png" alt="MGQS Portal">
+                    </div>
+                    <div class="project-info">
+                        <h3 style="font-size:1.5rem; margin-bottom:10px;">MGQS Portal</h3>
+                        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">
+                            Education Portal built with ASP.NET Core MVC for student testing lifecycles.
+                        </p>
+                        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:15px;">
+                            <span class="tech-tag" style="font-size:0.7rem;">MVC</span>
+                            <span class="tech-tag" style="font-size:0.7rem;">SQL Server</span>
+                        </div>
+                        <div class="metric-grid" style="margin-top:0; grid-template-columns: repeat(2, 1fr);">
+                            <div class="metric-box" style="padding:10px;"><span class="metric-val"
+                                    style="font-size:1.1rem;">85%</span><span class="metric-lbl"
+                                    style="font-size:0.6rem;">Auto Quiz</span></div>
+                            <div class="metric-box" style="padding:10px;"><span class="metric-val">LMS</span><span
+                                    class="metric-lbl" style="font-size:0.6rem;">System</span></div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/TechSageHub?tab=repositories" target="_blank"
+                                class="btn-project-action primary">Live Demo</a>
+                            <a href="https://github.com/TechSageHub?tab=repositories" target="_blank"
+                                class="btn-project-action outline"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Frontend Showcase -->
+                <div class="bento-item grid-project">
+                    <div class="project-visual">
+                        <img src="assets/img/sasham_preview.png" alt="Sasham Catering">
+                    </div>
+                    <div class="project-info">
+                        <h3 style="font-size:1.5rem; margin-bottom:10px;">Sasham Catering</h3>
+                        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">
+                            Premium catering service website with modern UI/UX and responsive design.
+                        </p>
+                        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:15px;">
+                            <span class="tech-tag" style="font-size:0.7rem;">HTML5</span>
+                            <span class="tech-tag" style="font-size:0.7rem;">CSS3</span>
+                            <span class="tech-tag" style="font-size:0.7rem;">JavaScript</span>
+                        </div>
+                        <div class="metric-grid" style="margin-top:0; grid-template-columns: repeat(2, 1fr);">
+                            <div class="metric-box" style="padding:10px;"><span class="metric-val"
+                                    style="font-size:1.1rem;">100%</span><span class="metric-lbl"
+                                    style="font-size:0.6rem;">Responsive</span></div>
+                            <div class="metric-box" style="padding:10px;"><span class="metric-val"
+                                    style="font-size:1.1rem;">A+</span><span class="metric-lbl"
+                                    style="font-size:0.6rem;">UI/UX</span></div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://sashamcatering.vercel.app/" target="_blank"
+                                class="btn-project-action primary">Live Demo</a>
+                            <a href="https://github.com/TechSageHub?tab=repositories" target="_blank"
+                                class="btn-project-action outline"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <span class="section-meta">Let's Connect</span>
+            <h2 class="section-title">Build Together.</h2>
+
+            <div class="contact-grid-main">
+                <!-- Left Column (Info) -->
+                <div class="contact-info-col">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Ready to elevate your digital presence?</h3>
+                    <p style="color:var(--text-muted); margin-bottom: 40px; line-height: 1.8;">
+                        I specialize in transforming complex business requirements into high-performance, scalable
+                        software solutions. Let's discuss how I can contribute to your next project.
+                    </p>
+
+                    <div class="capability-grid">
+                        <div class="cap-item">
+                            <div class="cap-icon purple"><i class="fas fa-rocket"></i></div>
+                            <div class="cap-text">
+                                <strong>Performance</strong>
+                                <span>Optimized Systems</span>
+                            </div>
+                        </div>
+                        <div class="cap-item">
+                            <div class="cap-icon blue"><i class="fas fa-shield-alt"></i></div>
+                            <div class="cap-text">
+                                <strong>Security</strong>
+                                <span>Enterprise-Grade</span>
+                            </div>
+                        </div>
+                        <div class="cap-item">
+                            <div class="cap-icon orange"><i class="fas fa-cubes"></i></div>
+                            <div class="cap-text">
+                                <strong>Clean Architecture</strong>
+                                <span>SOLID, DDD, Patterns</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 50px;">
+                        <a href="https://wa.me/2348137250625" target="_blank" class="btn-obsidian"
+                            style="background: var(--accent-primary); color:white; padding: 12px 25px;">Let's Chat
+                            Tech</a>
+                        <span style="color:var(--text-muted); margin-left: 20px; font-size: 0.9rem;">Or message me
+                            directly — quick sync, no obligations.</span>
+                    </div>
+
+                    <div class="contact-direct-links">
+                        <div class="direct-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <label>Email</label>
+                                <a href="mailto:ilyasabdulmannan@gmail.com">ilyasabdulmannan@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="direct-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <label>WhatsApp</label>
+                                <a href="https://wa.me/2348137250625">+234 813 725 0625</a>
+                            </div>
+                        </div>
+                        <div class="direct-item">
+                            <i class="fab fa-linkedin"></i>
+                            <div>
+                                <label>LinkedIn</label>
+                                <a href="https://www.linkedin.com/in/abdul-mannan-ilyas-438197350/"
+                                    target="_blank">Abdul Mannan Ilyas</a>
+                            </div>
+                        </div>
+                        <div class="direct-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <label>Based in</label>
+                                <a href="javascript:void(0)">Lagos, Nigeria</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="quick-wins-mini">
+                        <strong>Quick wins I deliver:</strong>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Reduce API latency and database throughput</li>
+                            <li><i class="fas fa-check"></i> Modernize legacy .NET applications</li>
+                            <li><i class="fas fa-check"></i> Enforce high-standard Clean Architecture</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column (Form) -->
+                <div class="contact-form-col">
+                    <form id="whatsapp-form" class="obsidian-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" id="form-name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="form-email" placeholder="email@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" id="form-subject" placeholder="Project Inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea id="form-message" rows="6" placeholder="Tell me about your tech challenges..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn-obsidian-submit">
+                            <span>Send Message</span> <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-main">
+        <div class="container">
+            <p>&copy; 2026 Ilyas Abdul Mannan. Engineered for Excellence & Authenticity.</p>
+        </div>
+    </footer>
+
+    <!-- Interactivity -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
