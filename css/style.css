@@ -590,6 +590,7 @@ h4,
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(100%);
     }
@@ -1146,7 +1147,21 @@ h4,
 
     #nav-overlay {
         top: 50px;
+        background: #ffffff;
+        /* Ensure background is solid white */
+        z-index: 2000;
+        opacity: 0;
+        visibility: hidden;
+        /* Instant closing: No transition */
+        transition: none;
+        /* max-height handled by base class or default 0 */
+    }
+
+    #nav-overlay.active {
+        opacity: 1;
+        visibility: visible;
         max-height: calc(100vh - 50px);
+        /* Restore logic here for clarity */
     }
 
     .navbar .container {
