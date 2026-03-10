@@ -1,5 +1,41 @@
 // Abdul Mannan Ilyas Portfolio - Main JavaScript File
 
+// Theme Toggle (Light/Dark)
+const themeToggle = document.getElementById('theme-toggle');
+const root = document.documentElement;
+const savedTheme = localStorage.getItem('theme');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+const setTheme = (theme) => {
+    root.setAttribute('data-theme', theme);
+
+    if (!themeToggle) {
+        return;
+    }
+
+    const icon = themeToggle.querySelector('i');
+    const isDark = theme === 'dark';
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+
+    if (icon) {
+        icon.classList.toggle('fa-moon', !isDark);
+        icon.classList.toggle('fa-sun', isDark);
+    }
+};
+
+const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+setTheme(initialTheme);
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const isDark = root.getAttribute('data-theme') === 'dark';
+        const nextTheme = isDark ? 'light' : 'dark';
+        setTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme);
+    });
+}
+
 // Mobile Menu Toggle
 const mobileToggle = document.getElementById('mobile-toggle');
 const navOverlay = document.getElementById('nav-overlay');
