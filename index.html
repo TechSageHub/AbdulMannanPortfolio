@@ -29,6 +29,8 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" as="image" href="assets/img/pfp.jpg">
+    <link rel="preload" as="image" href="assets/img/techsagehub_logo_official.png">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/img/techsagehub_logo_official.png" type="image/x-icon">
@@ -58,8 +60,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">
-                <img src="assets/img/techsagehub_logo_official.png" alt="TechsageHub Logo"
-                    style="height: 32px; border-radius: 4px;">
+                <img src="assets/img/techsagehub_logo_official.png" alt="TechsageHub Logo">
                 Techsage<span>Hub</span>
             </a>
             <div class="nav-links">
@@ -94,15 +95,29 @@
                 </p>
                 <div class="hero-btns">
                     <a href="#work" class="btn-obsidian">Explore My Work</a>
-                    <a href="assets/docs/CV_Ilyas_Abdul_Mannan.pdf" download class="btn-obsidian"
-                        style="background: transparent; border: 2px solid var(--accent-primary); color: var(--accent-primary) !important; box-shadow: none; margin-left: 15px;">
-                        Download CV <i class="fas fa-download" style="margin-left: 8px;"></i>
+                    <a href="assets/docs/CV_Ilyas_Abdul_Mannan.pdf" download class="btn-obsidian btn-outline-premium">
+                        Download CV <i class="fas fa-download"></i>
                     </a>
+                </div>
+                <div class="hero-stats" aria-label="Portfolio highlights">
+                    <div>
+                        <strong>3+</strong>
+                        <span>Years XP</span>
+                    </div>
+                    <div>
+                        <strong>90%</strong>
+                        <span>Latency Win</span>
+                    </div>
+                    <div>
+                        <strong>.NET</strong>
+                        <span>Specialist</span>
+                    </div>
                 </div>
             </div>
             <div class="hero-visual">
                 <img src="assets/img/pfp.jpg" alt="Ilyas Abdul Mannan"
-                    style="width:100%; height:100%; object-fit:cover; object-position: center 25%; opacity: 1; filter: contrast(1.05) brightness(1.05);">
+                    style="width:100%; height:100%; object-fit:cover; object-position: center 25%; opacity: 1; filter: contrast(1.05) brightness(1.05);"
+                    decoding="async">
             </div>
         </div>
     </section>
@@ -397,7 +412,7 @@
             <div class="cert-gallery">
                 <div class="cert-card-unique">
                     <div class="cert-display">
-                        <img src="assets/img/microsoft_certificate.png" alt="Foundational C#">
+                        <img src="assets/img/microsoft_certificate.png" alt="Foundational C#" loading="lazy" decoding="async">
                     </div>
                     <div class="cert-content">
                         <h4 style="font-size:1.4rem; margin-bottom:10px;">Foundational C#</h4>
@@ -410,7 +425,7 @@
 
                 <div class="cert-card-unique">
                     <div class="cert-display">
-                        <img src="assets/img/mgqs_certificate.png" alt="Software Engineering Mastery">
+                        <img src="assets/img/mgqs_certificate.png" alt="Software Engineering Mastery" loading="lazy" decoding="async">
                     </div>
                     <div class="cert-content">
                         <h4 style="font-size:1.4rem; margin-bottom:10px;">Software Engineering Mastery</h4>
@@ -434,7 +449,7 @@
                 <!-- Project Card 1 -->
                 <div class="bento-item grid-project">
                     <div class="project-visual">
-                        <img src="assets/img/staffhub_preview.png" alt="StaffHubSystem">
+                        <img src="assets/img/staffhub_preview.png" alt="StaffHubSystem" loading="lazy" decoding="async">
                     </div>
                     <div class="project-info">
                         <h3 style="font-size:1.5rem; margin-bottom:10px;">StaffHubSystem</h3>
@@ -465,7 +480,7 @@
                 <!-- Project Card 2 -->
                 <div class="bento-item grid-project">
                     <div class="project-visual">
-                        <img src="assets/img/mgqs_preview.png" alt="MGQS Portal">
+                        <img src="assets/img/mgqs_preview.png" alt="MGQS Portal" loading="lazy" decoding="async">
                     </div>
                     <div class="project-info">
                         <h3 style="font-size:1.5rem; margin-bottom:10px;">MGQS Portal</h3>
@@ -495,7 +510,7 @@
                 <!-- Project Card 3: Frontend Showcase -->
                 <div class="bento-item grid-project">
                     <div class="project-visual">
-                        <img src="assets/img/sasham_preview.png" alt="Sasham Catering">
+                        <img src="assets/img/sasham_preview.png" alt="Sasham Catering" loading="lazy" decoding="async">
                     </div>
                     <div class="project-info">
                         <h3 style="font-size:1.5rem; margin-bottom:10px;">Sasham Catering</h3>
