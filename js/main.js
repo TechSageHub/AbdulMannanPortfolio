@@ -141,3 +141,51 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// Premium reveal animations
+const revealTargets = document.querySelectorAll(
+    '.hero-text, .hero-visual, .bento-item, .timeline-event, .cert-card-unique, .contact-info-col, .contact-form-col'
+);
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.14,
+    rootMargin: '0px 0px -60px 0px',
+});
+
+revealTargets.forEach((target, index) => {
+    target.classList.add('reveal-prep');
+    target.style.transitionDelay = `${Math.min(index % 4, 3) * 80}ms`;
+    revealObserver.observe(target);
+});
+
+// Send contact form messages through WhatsApp
+const whatsappForm = document.getElementById('whatsapp-form');
+
+if (whatsappForm) {
+    whatsappForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById('form-name')?.value.trim();
+        const email = document.getElementById('form-email')?.value.trim();
+        const subject = document.getElementById('form-subject')?.value.trim();
+        const message = document.getElementById('form-message')?.value.trim();
+
+        const whatsappMessage = [
+            `Hello Ilyas, my name is ${name}.`,
+            `Email: ${email}`,
+            `Subject: ${subject}`,
+            '',
+            message,
+        ].join('\n');
+
+        window.open(`https://wa.me/2348137250625?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+        whatsappForm.reset();
+    });
+}
