@@ -437,7 +437,7 @@ h4,
 }
 
 .grid-project {
-    grid-column: span 4;
+    grid-column: span 6;
 }
 
 @media (max-width: 1024px) {
