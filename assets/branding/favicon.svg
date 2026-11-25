@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#000"/>
+  <path d="M10 11h44v42H10z" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="1.5"/>
+  <text x="32" y="39" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700" letter-spacing="-.7" text-anchor="middle">AMI</text>
+  <circle cx="50" cy="48" r="2.2" fill="#fff"/>
+</svg>
