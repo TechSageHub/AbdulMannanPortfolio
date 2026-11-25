@@ -1,191 +1,128 @@
-// Abdul Mannan Ilyas Portfolio - Main JavaScript File
+(() => {
+  'use strict';
 
-// Theme Toggle (Light/Dark)
-const themeToggle = document.getElementById('theme-toggle');
-const root = document.documentElement;
-const savedTheme = localStorage.getItem('theme');
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const root = document.documentElement;
+  const themeToggle = document.getElementById('theme-toggle');
+  const metaTheme = document.querySelector('meta[name="theme-color"]');
 
-const setTheme = (theme) => {
-    root.setAttribute('data-theme', theme);
-
-    if (!themeToggle) {
-        return;
-    }
-
-    const icon = themeToggle.querySelector('i');
+  const readTheme = () => {
+    try { return localStorage.getItem('theme'); } catch { return null; }
+  };
+  const applyTheme = (theme, persist = false) => {
     const isDark = theme === 'dark';
-    themeToggle.setAttribute('aria-pressed', String(isDark));
-    themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-
-    if (icon) {
-        icon.classList.toggle('fa-moon', !isDark);
-        icon.classList.toggle('fa-sun', isDark);
+    root.dataset.theme = isDark ? 'dark' : 'light';
+    if (themeToggle) {
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      themeToggle.innerHTML = `<i class="fa-solid ${isDark ? 'fa-sun' : 'fa-moon'}" aria-hidden="true"></i>`;
     }
-};
+    if (metaTheme) metaTheme.content = isDark ? '#000000' : '#ffffff';
+    if (persist) {
+      try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch { /* Storage can be unavailable in private contexts. */ }
+    }
+  };
+  const savedTheme = readTheme();
+  applyTheme(savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+  themeToggle?.addEventListener('click', () => applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark', true));
 
-const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-setTheme(initialTheme);
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const closeMenu = () => {
+    navLinks?.classList.remove('open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-label', 'Open navigation');
+    if (menuToggle) menuToggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+  };
+  menuToggle?.addEventListener('click', () => {
+    const open = menuToggle.getAttribute('aria-expanded') !== 'true';
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    menuToggle.innerHTML = `<i class="fa-solid ${open ? 'fa-xmark' : 'fa-bars'}" aria-hidden="true"></i>`;
+    navLinks?.classList.toggle('open', open);
+  });
+  navLinks?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
 
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        const isDark = root.getAttribute('data-theme') === 'dark';
-        const nextTheme = isDark ? 'light' : 'dark';
-        setTheme(nextTheme);
-        localStorage.setItem('theme', nextTheme);
-    });
-}
-
-// Mobile Menu Toggle
-const mobileToggle = document.getElementById('mobile-toggle');
-const navOverlay = document.getElementById('nav-overlay');
-
-if (mobileToggle && navOverlay) {
-    // Toggle menu and icon
-    mobileToggle.addEventListener('click', () => {
-        navOverlay.classList.toggle('active');
-        const icon = mobileToggle.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-    });
-
-    // Close menu when a link is clicked
-    const drawerLinks = navOverlay.querySelectorAll('.drawer-nav a');
-    drawerLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navOverlay.classList.remove('active');
-            const icon = mobileToggle.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
+  const navAnchors = [...document.querySelectorAll('.nav-links a')];
+  const sections = [...document.querySelectorAll('main section[id]')];
+  if ('IntersectionObserver' in window) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navAnchors.forEach(link => {
+          const active = link.getAttribute('href') === `#${entry.target.id}`;
+          link.classList.toggle('active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
         });
+      });
+    }, { rootMargin: '-25% 0px -65% 0px', threshold: 0 });
+    sections.forEach(section => sectionObserver.observe(section));
+  }
+
+  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    }), { threshold: 0.1, rootMargin: '0px 0px -25px 0px' });
+    revealItems.forEach(item => revealObserver.observe(item));
+  } else revealItems.forEach(item => item.classList.add('visible'));
+
+  const filters = document.querySelectorAll('.filter-button');
+  const projectCards = document.querySelectorAll('.project-card');
+  filters.forEach(button => button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+    filters.forEach(option => {
+      const selected = option === button;
+      option.classList.toggle('active', selected);
+      option.setAttribute('aria-pressed', String(selected));
     });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('#nav-overlay') && !e.target.closest('#mobile-toggle')) {
-            navOverlay.classList.remove('active');
-            const icon = mobileToggle.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
-        }
+    projectCards.forEach(card => {
+      card.hidden = filter !== 'all' && card.dataset.category !== filter;
     });
+  }));
 
-    // Close menu when resizing to desktop
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 992) {
-            navOverlay.classList.remove('active');
-            const icon = mobileToggle.querySelector('i');
-            icon.classList.add('fa-bars');
-            icon.classList.remove('fa-times');
-        }
-    });
-}
+  const focusWords = ['Backend Engineering', 'Full Stack Development', 'Frontend Development'];
+  const typedText = document.querySelector('.typed-text');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (typedText && !reduceMotion) {
+    let wordIndex = 0;
+    let position = focusWords[0].length;
+    let deleting = true;
+    const typeNext = () => {
+      const word = focusWords[wordIndex];
+      position += deleting ? -1 : 1;
+      typedText.textContent = word.slice(0, position);
+      let delay = deleting ? 42 : 76;
+      if (position <= 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % focusWords.length;
+        delay = 280;
+      } else if (position >= focusWords[wordIndex].length) {
+        deleting = true;
+        delay = 1500;
+      }
+      window.setTimeout(typeNext, delay);
+    };
+    window.setTimeout(typeNext, 1500);
+  }
 
-// Smooth scroll behavior for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#') {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-    });
-});
+  document.getElementById('year').textContent = String(new Date().getFullYear());
 
-// Animate skill bars on scroll
-const barObserverOptions = {
-    threshold: 0.3,
-};
-
-const barObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Animate the bar-fill to its data-width value
-            const barFill = entry.target.querySelector('.bar-fill');
-            if (barFill) {
-                const targetWidth = barFill.getAttribute('data-width');
-                barFill.style.width = targetWidth;
-            }
-            barObserver.unobserve(entry.target);
-        }
-    });
-}, barObserverOptions);
-
-// Observe all proficiency bars
-document.querySelectorAll('.proficiency-bar').forEach(bar => {
-    barObserver.observe(bar);
-});
-
-// Add active class to nav links based on scroll position
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    let current = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Premium reveal animations
-const revealTargets = document.querySelectorAll(
-    '.hero-text, .hero-visual, .bento-item, .timeline-event, .cert-card-unique, .contact-info-col, .contact-form-col'
-);
-
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.14,
-    rootMargin: '0px 0px -60px 0px',
-});
-
-revealTargets.forEach((target, index) => {
-    target.classList.add('reveal-prep');
-    target.style.transitionDelay = `${Math.min(index % 4, 3) * 80}ms`;
-    revealObserver.observe(target);
-});
-
-// Send contact form messages through WhatsApp
-const whatsappForm = document.getElementById('whatsapp-form');
-
-if (whatsappForm) {
-    whatsappForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        const name = document.getElementById('form-name')?.value.trim();
-        const email = document.getElementById('form-email')?.value.trim();
-        const subject = document.getElementById('form-subject')?.value.trim();
-        const message = document.getElementById('form-message')?.value.trim();
-
-        const whatsappMessage = [
-            `Hello Ilyas, my name is ${name}.`,
-            `Email: ${email}`,
-            `Subject: ${subject}`,
-            '',
-            message,
-        ].join('\n');
-
-        window.open(`https://wa.me/2348137250625?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
-        whatsappForm.reset();
-    });
-}
+  const contactForm = document.getElementById('whatsapp-form');
+  contactForm?.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!contactForm.reportValidity()) return;
+    const name = document.getElementById('form-name').value.trim();
+    const email = document.getElementById('form-email').value.trim();
+    const subject = document.getElementById('form-subject').value.trim();
+    const message = document.getElementById('form-message').value.trim();
+    const body = [`Hello Ilyas, my name is ${name}.`, `Email: ${email}`, `Subject: ${subject}`, '', message].join('\n');
+    const url = `https://wa.me/2348137250625?text=${encodeURIComponent(body)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+    contactForm.reset();
+  });
+})();

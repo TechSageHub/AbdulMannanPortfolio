@@ -1,716 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ilyas Abdul Mannan | Full Stack Software Developer</title>
-
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Ilyas Abdul Mannan | Full Stack Software Developer">
-    <meta name="description"
-        content="Full Stack Software Engineer specializing in .NET and Node.js development. Architecting robust, scalable applications with clean architecture.">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://techsagehub.netlify.app/">
-    <meta property="og:title" content="Ilyas Abdul Mannan | Full Stack Software Developer">
-    <meta property="og:description"
-        content="Full Stack Software Engineer specializing in .NET and Node.js development. Architecting robust, scalable applications with clean architecture.">
-    <meta property="og:image" content="https://techsagehub.netlify.app/assets/img/techsagehub_logo_official.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://techsagehub.netlify.app/">
-    <meta property="twitter:title" content="Ilyas Abdul Mannan | Full Stack Software Developer">
-    <meta property="twitter:description"
-        content="Full Stack Software Engineer specializing in .NET and Node.js development. Architecting robust, scalable applications with clean architecture.">
-    <meta property="twitter:image" content="https://techsagehub.netlify.app/assets/img/techsagehub_logo_official.png">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preload" as="image" href="assets/img/pfp.jpg">
-    <link rel="preload" as="image" href="assets/img/techsagehub_logo_official.png">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="shortcut icon" href="assets/img/techsagehub_logo_official.png" type="image/x-icon">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Ilyas Abdul Mannan Akinkunmi is a backend software developer building dependable APIs and full-stack web applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://techsagehub.netlify.app/">
+  <meta property="og:title" content="Ilyas Abdul Mannan Akinkunmi — Software Developer">
+  <meta property="og:description" content="Backend engineering, full-stack development and thoughtful frontend work.">
+  <title>Ilyas Abdul Mannan Akinkunmi — Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      document.documentElement.dataset.theme = savedTheme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    } catch {
+      document.documentElement.dataset.theme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <!-- Decorative Background -->
-    <div class="bg-aura">
-        <div class="aura-blob aura-1"></div>
-        <div class="aura-blob aura-2"></div>
-    </div>
-
-    <!-- Navigation Overlay (Dropdown) -->
-    <div id="nav-overlay">
-        <nav class="drawer-nav">
-            <a href="#home">Home</a>
-            <a href="#skills">Skills</a>
-            <a href="#journey">Journey</a>
-            <a href="#certs">Credentials</a>
-            <a href="#work">Work</a>
-            <a href="#contact" class="btn-obsidian">Connect</a>
-        </nav>
-    </div>
-
-    <!-- Main Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="assets/img/techsagehub_logo_official.png" alt="TechsageHub Logo">
-                Techsage<span>Hub</span>
-            </a>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#skills">Skills</a>
-                <a href="#journey">Journey</a>
-                <a href="#certs">Credentials</a>
-                <a href="#work">Work</a>
-                <a href="#contact" class="btn-obsidian">Connect</a>
-            </div>
-            <div class="nav-actions">
-                <button id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
-                    <i class="fas fa-moon"></i>
-                </button>
-                <button id="mobile-toggle" aria-label="Toggle Navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <header class="site-header">
+    <nav class="navbar wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="AM, home"><span class="brand-mark">AM<span>.</span></span><span class="brand-name">ilyas.dev</span></a>
+      <div class="nav-links" id="nav-links">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions"><button class="icon-button" id="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="true"><i class="fa-solid fa-sun" aria-hidden="true"></i></button><button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links"><i class="fa-solid fa-bars" aria-hidden="true"></i></button></div>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-text">
-                <span class="section-meta">Full Stack Software Developer</span>
-                <h1 class="hero-title">Ilyas Abdul <br><span class="highlight">Mannan</span></h1>
-                <p class="hero-desc">
-                    Full Stack Software Engineer specializing in <strong>.NET & Node.js development</strong>. I build robust,
-                    scalable applications with clean architecture and modern technologies. Passionate about creating
-                    seamless user experiences and solving complex technical challenges.
-                </p>
-                <div class="hero-btns">
-                    <a href="#work" class="btn-obsidian">Explore My Work</a>
-                    <a href="assets/docs/CV_Ilyas_Abdul_Mannan.pdf" download class="btn-obsidian btn-outline-premium">
-                        Download CV <i class="fas fa-download"></i>
-                    </a>
-                </div>
-                <div class="hero-stats" aria-label="Portfolio highlights">
-                    <div>
-                        <strong>3+</strong>
-                        <span>Years XP</span>
-                    </div>
-                    <div>
-                        <strong>90%</strong>
-                        <span>Latency Win</span>
-                    </div>
-                    <div>
-                        <strong>.NET</strong>
-                        <span>Specialist</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <img src="assets/img/pfp.jpg" alt="Ilyas Abdul Mannan"
-                    style="width:100%; height:100%; object-fit:cover; object-position: center 25%; opacity: 1; filter: contrast(1.05) brightness(1.05);"
-                    decoding="async">
-            </div>
+  <main id="main">
+    <section class="hero section wrap" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="status-dot"></span> AVAILABLE FOR OPPORTUNITIES</p>
+        <p class="comment">// Hello, World! I build software that works.</p>
+        <h1>Ilyas Abdul Mannan <span>Akinkunmi</span></h1>
+        <p class="hero-role">Backend Software Developer <b>|</b> Full Stack Developer</p>
+        <p class="hero-intro">I design and build reliable web applications, APIs and practical digital products with a focus on backend engineering and clean, usable interfaces.</p>
+        <p class="typed-line"><span class="code-key">const</span> focus = <span class="typed-text" aria-live="polite">Backend Engineering</span><span class="caret">_</span></p>
+        <div class="hero-cta"><a class="button button-primary" href="#projects">View projects <i class="fa-solid fa-arrow-right"></i></a><a class="button button-quiet" href="assets/docs/CV_Ilyas_Abdul_Mannan.pdf" download>Download CV <i class="fa-solid fa-download"></i></a></div>
+        <div class="social-row"><a href="https://github.com/TechSageHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a><a href="https://www.linkedin.com/in/abdul-mannan-ilyas-438197350/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a><a href="mailto:ilyasabdulmannan@gmail.com"><i class="fa-regular fa-envelope"></i> Email</a></div>
+      </div>
+      <div class="hero-scene reveal" aria-label="Animated code editor illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="float-chip chip-csharp"><i class="devicon-csharp-plain colored"></i><span>C#</span></div>
+        <div class="float-chip chip-js"><i class="devicon-javascript-plain colored"></i><span>JS</span></div>
+        <div class="float-chip chip-node"><i class="devicon-nodejs-plain colored"></i><span>Node</span></div>
+        <div class="editor-window">
+          <div class="editor-top"><div class="window-dots"><i></i><i></i><i></i></div><span>developer.cs</span><i class="fa-solid fa-ellipsis"></i></div>
+          <div class="editor-body"><div class="line-numbers">01<br>02<br>03<br>04<br>05<br>06<br>07<br>08<br>09</div><pre><code><span class="syn-purple">public class</span> <span class="syn-green">Developer</span>
+{
+  <span class="syn-purple">public string</span> Name =&gt;
+    <span class="syn-yellow">"Ilyas Mannan"</span>;
+
+  <span class="syn-purple">public string</span>[] Focus =&gt;
+  [ <span class="syn-yellow">"APIs"</span>, <span class="syn-yellow">"Web apps"</span> ];
+
+  <span class="syn-blue">Build</span>(<span class="syn-green">withPurpose</span>: <span class="syn-purple">true</span>);
+}</code></pre></div>
+          <div class="editor-status"><span><i class="fa-solid fa-circle"></i> Ready to build</span><span>UTF-8&nbsp;&nbsp; C#</span></div>
         </div>
+        <div class="scene-caption"><span class="caption-mark">&lt;/&gt;</span><span>Thoughtful code.<br><b>Useful outcomes.</b></span></div>
+      </div>
+      <a class="scroll-cue" href="#about"><span></span> SCROLL TO EXPLORE</a>
     </section>
 
-    <!-- Skills Bento Section -->
-    <section id="skills" class="skills-bento">
-        <div class="container">
-            <span class="section-meta">Core Competencies</span>
-            <h2 class="section-title">The Arsenal.</h2>
-
-            <div class="bento-shell">
-                <!-- Large Skill Overview Card -->
-                <div class="bento-item grid-arsenal">
-                    <div class="arsenal-header">
-                        <h3><i class="fas fa-layer-group"></i> Tech Arsenal</h3>
-                        <span style="color:var(--text-muted); font-weight:700;">3+ YEARS XP</span>
-                    </div>
-
-                    <!-- Backend Ecosystem -->
-                    <div class="skill-category">
-                        <div class="category-title">
-                            <div class="category-icon"><i class="fas fa-microchip"></i></div>
-                            Backend Ecosystem (.NET & Node.js)
-                        </div>
-                        <div class="proficiency-bar">
-                            <div class="bar-meta"><span>C# / .NET / ASP.NET Core</span> <span>95%</span></div>
-                            <div class="bar-track">
-                                <div class="bar-fill" data-width="95%" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="proficiency-bar">
-                            <div class="bar-meta"><span>Node.js / Express.js</span> <span>88%</span></div>
-                            <div class="bar-track">
-                                <div class="bar-fill" data-width="88%" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="proficiency-bar">
-                            <div class="bar-meta"><span>Entity Framework Core</span> <span>90%</span></div>
-                            <div class="bar-track">
-                                <div class="bar-fill" data-width="90%" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="proficiency-bar">
-                            <div class="bar-meta"><span>REST APIs / Cloudinary</span> <span>85%</span></div>
-                            <div class="bar-track">
-                                <div class="bar-fill" data-width="85%" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="proficiency-bar">
-                            <div class="bar-meta"><span>Unit Testing / Serilog</span> <span>80%</span></div>
-                            <div class="bar-track">
-                                <div class="bar-fill" data-width="80%" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Web Frontline -->
-                    <div class="skill-category">
-                        <div class="category-title">
-                            <div class="category-icon"><i class="fas fa-globe"></i></div>
-                            Web Frontline
-                        </div>
-                        <div class="proficiency-bar">
-                            <div class="bar-meta"><span>JavaScript / HTML / CSS</span> <span>90%</span></div>
-                            <div class="bar-track">
-                                <div class="bar-fill" data-width="90%" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Database & Dev Tools -->
-                    <div class="skill-category">
-                        <div class="category-title">
-                            <div class="category-icon"><i class="fas fa-database"></i></div>
-                            Database & Dev Tools
-                        </div>
-                        <div class="proficiency-bar">
-                            <div class="bar-meta"><span>SQL Server / PostgreSQL</span> <span>90%</span></div>
-                            <div class="bar-track">
-                                <div class="bar-fill" data-width="90%" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                        <div class="proficiency-bar">
-                            <div class="bar-meta"><span>Git / GitHub Actions</span> <span>85%</span></div>
-                            <div class="bar-track">
-                                <div class="bar-fill" data-width="85%" style="width: 0%;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Radar Chart with Tech Logos -->
-                <div class="bento-item grid-radar">
-                    <div class="radar-container">
-                        <svg class="radar-chart" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Radar Grid (Hexagon for 6 points) -->
-                            <g class="radar-grid">
-                                <!-- Outer hexagon -->
-                                <polygon points="150,40 230,90 230,190 150,240 70,190 70,90" fill="none"
-                                    stroke="rgba(79, 70, 229, 0.15)" stroke-width="1" />
-                                <!-- Middle hexagon -->
-                                <polygon points="150,70 200,105 200,175 150,210 100,175 100,105" fill="none"
-                                    stroke="rgba(79, 70, 229, 0.15)" stroke-width="1" />
-                                <!-- Inner hexagon -->
-                                <polygon points="150,100 170,115 170,165 150,180 130,165 130,115" fill="none"
-                                    stroke="rgba(79, 70, 229, 0.15)" stroke-width="1" />
-
-                                <!-- Radar lines from center -->
-                                <line x1="150" y1="150" x2="150" y2="40" stroke="rgba(79, 70, 229, 0.1)"
-                                    stroke-width="1" />
-                                <line x1="150" y1="150" x2="230" y2="90" stroke="rgba(79, 70, 229, 0.1)"
-                                    stroke-width="1" />
-                                <line x1="150" y1="150" x2="230" y2="190" stroke="rgba(79, 70, 229, 0.1)"
-                                    stroke-width="1" />
-                                <line x1="150" y1="150" x2="150" y2="240" stroke="rgba(79, 70, 229, 0.1)"
-                                    stroke-width="1" />
-                                <line x1="150" y1="150" x2="70" y2="190" stroke="rgba(79, 70, 229, 0.1)"
-                                    stroke-width="1" />
-                                <line x1="150" y1="150" x2="70" y2="90" stroke="rgba(79, 70, 229, 0.1)"
-                                    stroke-width="1" />
-                            </g>
-
-                            <!-- Skill polygon (filled area) -->
-                            <polygon class="radar-fill" points="150,55 215,95 215,185 150,225 85,185 85,95"
-                                fill="rgba(79, 70, 229, 0.2)" stroke="rgb(79, 70, 229)" stroke-width="2" />
-
-                            <!-- Technology points -->
-                            <circle class="radar-point" cx="150" cy="55" r="5" fill="#4f46e5" />
-                            <circle class="radar-point" cx="215" cy="95" r="5" fill="#4f46e5" />
-                            <circle class="radar-point" cx="215" cy="185" r="5" fill="#4f46e5" />
-                            <circle class="radar-point" cx="150" cy="225" r="5" fill="#4f46e5" />
-                            <circle class="radar-point" cx="85" cy="185" r="5" fill="#4f46e5" />
-                            <circle class="radar-point" cx="85" cy="95" r="5" fill="#4f46e5" />
-                        </svg>
-
-                        <!-- Technology Icons & Labels -->
-                        <div class="tech-icon-label" style="top: 2%; left: 50%; transform: translateX(-50%);">
-                            <div class="tech-icon">
-                                <i class="fab fa-microsoft"></i>
-                            </div>
-                            <span>C#</span>
-                        </div>
-                        <div class="tech-icon-label" style="top: 20%; right: 5%;">
-                            <div class="tech-icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <span>ASP.NET Core</span>
-                        </div>
-                        <div class="tech-icon-label" style="bottom: 20%; right: 5%;">
-                            <div class="tech-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <span>Git</span>
-                        </div>
-                        <div class="tech-icon-label" style="bottom: 2%; left: 50%; transform: translateX(-50%);">
-                            <div class="tech-icon">
-                                <i class="fab fa-js-square"></i>
-                            </div>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="tech-icon-label" style="bottom: 20%; left: 5%;">
-                            <div class="tech-icon">
-                                <i class="fab fa-node-js"></i>
-                            </div>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="tech-icon-label" style="top: 20%; left: 5%;">
-                            <div class="tech-icon">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <span>SQL Server</span>
-                        </div>
-                    </div>
-                    <h4 style="margin-top: 20px; font-size: 1.1rem;">Architecture Radar</h4>
-                    <p style="color:var(--text-muted); font-size:0.75rem; margin-top:8px;">SOLID • Clean Architecture •
-                        DDD • RBAC</p>
-                </div>
-
-                <!-- Tools & Utilities -->
-                <div class="bento-item grid-tools">
-                    <h3 style="font-size:1.1rem; margin-bottom:15px;"><i class="fas fa-toolbox"></i> Core Tech Tools
-                    </h3>
-                    <div style="display:flex; flex-wrap:wrap; gap:10px;">
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Express.js</span>
-                        <span class="tech-tag">Git / GitHub Actions</span>
-                        <span class="tech-tag">REST APIs</span>
-                        <span class="tech-tag">Cloudinary</span>
-                        <span class="tech-tag">Unit Testing</span>
-                        <span class="tech-tag">Serilog</span>
-                        <span class="tech-tag">Swagger</span>
-                        <span class="tech-tag">Docker</span>
-                    </div>
-                </div>
-
-                <!-- Soft Skills / Meta -->
-                <div class="bento-item grid-tools" style="background:var(--accent-primary); color:white;">
-                    <h3 style="font-size:1.2rem; margin-bottom:20px; color:white;"><i class="fas fa-brain"></i>
-                        Professional Expertise</h3>
-                    <p style="font-weight:600;">Technical Leadership • Agile Scrum • Problem Solving • Technical
-                        Collaboration</p>
-                </div>
-            </div>
-        </div>
+    <section class="section wrap about-section" id="about">
+      <div class="section-heading reveal"><p class="comment">// A little context</p><h2>About <span>me</span></h2><p class="section-lead">A software developer who enjoys turning complex needs into clear, dependable systems.</p></div>
+      <div class="about-grid"><article class="about-card reveal"><span class="card-index">01 / PROFILE</span><h3>Building with intent.</h3><p>Ilyas Abdul Mannan Akinkunmi is a backend software developer with experience contributing to web products across backend and full-stack development. He works with .NET and Node.js to shape APIs, data workflows and applications that are straightforward to maintain.</p><p>His approach starts with understanding the problem, making sound engineering choices and keeping the experience clear for the people who use the software.</p></article>
+        <div class="about-aside reveal"><div class="terminal-card"><div class="terminal-head"><span><i class="fa-solid fa-terminal"></i> ~/principles</span><span>● ● ●</span></div><div class="terminal-body"><p><i>01</i> Solve the real problem</p><p><i>02</i> Keep boundaries clear</p><p><i>03</i> Make the next change easier</p><p><i>04</i> Care about the details</p></div></div><div class="location-note"><i class="fa-solid fa-location-dot"></i><span>Based in <b>Lagos, Nigeria</b></span></div></div>
+      </div>
     </section>
 
-    <!-- Career Journey (Pulse Timeline) -->
-    <section id="journey" class="journey-section">
-        <div class="container">
-            <span class="section-meta">Career Journey</span>
-            <h2 class="section-title">The Blueprint.</h2>
-
-            <div class="timeline-container">
-                <!-- Current Role -->
-                <div class="timeline-event">
-                    <div class="event-dot"></div>
-                    <div class="event-card">
-                        <div class="event-header">
-                            <div class="event-title">
-                                <h3>Full Stack Software Developer</h3>
-                                <span class="event-company">WhitteIntel Ltd, Lagos</span>
-                            </div>
-                            <span class="event-date">2025 – PRESENT</span>
-                        </div>
-                        <div class="event-body">
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Optimized PostgreSQL queries for
-                                    enterprise-scale data, reducing latency by <strong>90%</strong>.</li>
-                                <li><i class="fas fa-check-circle"></i> Architected core billing and HR modules using
-                                    <strong>.NET</strong>.
-                                </li>
-                                <li><i class="fas fa-check-circle"></i> Developed specialized middleware for
-                                    cross-platform data synchronization.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Internship Role -->
-                <div class="timeline-event">
-                    <div class="event-dot"></div>
-                    <div class="event-card">
-                        <div class="event-header">
-                            <div class="event-title">
-                                <h3>Backend Developer Intern</h3>
-                                <span class="event-company">Contech, Lagos</span>
-                            </div>
-                            <span class="event-date">09/2025 – 12/2025</span>
-                        </div>
-                        <div class="event-body">
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Assisted senior developers in debugging and
-                                    resolving backend defects, improving API stability.</li>
-                                <li><i class="fas fa-check-circle"></i> Participated in code reviews and team meetings
-                                    to gain insights into <strong>Clean Architecture</strong> and database design.</li>
-                                <li><i class="fas fa-check-circle"></i> Contributed to the development of RESTful
-                                    endpoints using <strong>C#, .NET, and PostgreSQL</strong>.</li>
-                                <li><i class="fas fa-check-circle"></i> Wrote unit tests to verify the functionality of
-                                    backend services and ensure code quality.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Previous Role -->
-                <div class="timeline-event">
-                    <div class="event-dot"></div>
-                    <div class="event-card">
-                        <div class="event-header">
-                            <div class="event-title">
-                                <h3>Full Stack Software Developer</h3>
-                                <span class="event-company">MGQS IT Research Lab, Lagos</span>
-                            </div>
-                            <span class="event-date">2024 – 2025</span>
-                        </div>
-                        <div class="event-body">
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> <strong>Project Lead:</strong> Directed
-                                    development for the <strong>MGQS Education Portal</strong>.</li>
-                                <li><i class="fas fa-check-circle"></i> Implemented a proprietary <strong>QR-based
-                                        attendance system</strong>, automating 85% of staff tracking.</li>
-                                <li><i class="fas fa-check-circle"></i> Spearheaded the <strong>Digital Document
-                                        Vault</strong> with high-security RBAC protocols.</li>
-                                <li><i class="fas fa-check-circle"></i> Enforced strict Clean Architecture standards
-                                    across project modules.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="section wrap skills-section" id="skills">
+      <div class="section-heading reveal"><p class="comment">// Tools I reach for</p><h2>My <span>toolkit</span></h2><p class="section-lead">Technologies reflected in my existing work and portfolio.</p></div>
+      <div class="skills-grid">
+        <article class="skill-panel reveal"><h3><span>01</span> Languages &amp; web</h3><div class="tech-grid"><div class="tech-item" title="C#"><i class="devicon-csharp-plain colored"></i><span>C#</span></div><div class="tech-item" title="JavaScript"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div><div class="tech-item" title="HTML5"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div><div class="tech-item" title="CSS3"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div><div class="tech-item" title="SQL"><i class="fa-solid fa-database"></i><span>SQL</span></div></div></article>
+        <article class="skill-panel reveal"><h3><span>02</span> Backend</h3><div class="tech-grid"><div class="tech-item" title="ASP.NET Core"><i class="devicon-dotnetcore-plain colored"></i><span>ASP.NET Core</span></div><div class="tech-item" title="Entity Framework Core"><i class="fa-solid fa-layer-group"></i><span>EF Core</span></div><div class="tech-item" title="Node.js"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div><div class="tech-item" title="Express.js"><i class="devicon-express-original"></i><span>Express</span></div><div class="tech-item" title="REST APIs"><i class="fa-solid fa-code-branch"></i><span>REST APIs</span></div></div></article>
+        <article class="skill-panel reveal"><h3><span>03</span> Data &amp; workflow</h3><div class="tech-grid"><div class="tech-item" title="PostgreSQL"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div><div class="tech-item" title="SQL Server"><i class="fa-solid fa-server"></i><span>SQL Server</span></div><div class="tech-item" title="Git"><i class="devicon-git-plain colored"></i><span>Git</span></div><div class="tech-item" title="GitHub"><i class="devicon-github-original"></i><span>GitHub</span></div><div class="tech-item" title="Swagger"><i class="devicon-swagger-plain colored"></i><span>Swagger</span></div><div class="tech-item" title="Docker"><i class="devicon-docker-plain colored"></i><span>Docker</span></div></div></article>
+        <article class="skill-panel reveal"><h3><span>04</span> Engineering</h3><div class="principle-list"><span><i class="fa-solid fa-check"></i> Clean Architecture</span><span><i class="fa-solid fa-check"></i> SOLID principles</span><span><i class="fa-solid fa-check"></i> Unit testing</span><span><i class="fa-solid fa-check"></i> Role-based access</span></div></article>
+      </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certs" class="certifications">
-        <div class="container">
-            <span class="section-meta">Validated Excellence</span>
-            <h2 class="section-title">Credentials.</h2>
-
-            <div class="cert-gallery">
-                <div class="cert-card-unique">
-                    <div class="cert-display">
-                        <img src="assets/img/microsoft_certificate.png" alt="Foundational C#" loading="lazy" decoding="async">
-                    </div>
-                    <div class="cert-content">
-                        <h4 style="font-size:1.4rem; margin-bottom:10px;">Foundational C#</h4>
-                        <p style="color:var(--text-muted);">Verified by <strong>freeCodeCamp & Microsoft</strong></p>
-                        <span
-                            style="font-size:0.8rem; font-weight:700; color:var(--accent-primary); margin-top:15px; display:block;">EARNED
-                            FEB 2025</span>
-                    </div>
-                </div>
-
-                <div class="cert-card-unique">
-                    <div class="cert-display">
-                        <img src="assets/img/mgqs_certificate.png" alt="Software Engineering Mastery" loading="lazy" decoding="async">
-                    </div>
-                    <div class="cert-content">
-                        <h4 style="font-size:1.4rem; margin-bottom:10px;">Software Engineering Mastery</h4>
-                        <p style="color:var(--text-muted);">Master Track • <strong>MGQS IT IT Research Lab</strong></p>
-                        <span
-                            style="font-size:0.8rem; font-weight:700; color:var(--accent-primary); margin-top:15px; display:block;">EARNED
-                            SEPT 2025</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="section wrap credentials-section" id="credentials">
+      <div class="section-heading reveal"><p class="comment">// Learning and credentials</p><h2>Credentials <span>&amp; growth</span></h2></div>
+      <div class="credential-grid"><article class="credential-card reveal"><span class="credential-icon"><i class="fa-solid fa-certificate"></i></span><div><p class="eyebrow">FEB 2025</p><h3>Foundational C#</h3><p>Verified by freeCodeCamp &amp; Microsoft</p></div></article><article class="credential-card reveal"><span class="credential-icon"><i class="fa-solid fa-award"></i></span><div><p class="eyebrow">SEPT 2025</p><h3>Software Engineering Mastery</h3><p>MGQS IT Research Lab</p></div></article></div>
     </section>
 
-    <!-- Featured Projects (Scale Section) -->
-    <section id="work" class="work-section">
-        <div class="container">
-            <span class="section-meta">Featured Engineering</span>
-            <h2 class="section-title">Built for Scale.</h2>
-
-            <div class="bento-shell">
-                <!-- Project Card 1 -->
-                <div class="bento-item grid-project">
-                    <div class="project-visual">
-                        <img src="assets/img/staffhub_preview.png" alt="StaffHubSystem" loading="lazy" decoding="async">
-                    </div>
-                    <div class="project-info">
-                        <h3 style="font-size:1.5rem; margin-bottom:10px;">StaffHubSystem</h3>
-                        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">
-                            Enterprise workforce management with document vault and real-time attendance.
-                        </p>
-                        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:15px;">
-                            <span class="tech-tag" style="font-size:0.7rem;">.NET Core</span>
-                            <span class="tech-tag" style="font-size:0.7rem;">EF Core</span>
-                        </div>
-                        <div class="metric-grid" style="margin-top:0; grid-template-columns: repeat(2, 1fr);">
-                            <div class="metric-box" style="padding:10px;"><span class="metric-val"
-                                    style="font-size:1.1rem;">100%</span><span class="metric-lbl"
-                                    style="font-size:0.6rem;">Vault</span></div>
-                            <div class="metric-box" style="padding:10px;"><span class="metric-val"
-                                    style="font-size:1.1rem;">A+</span><span class="metric-lbl"
-                                    style="font-size:0.6rem;">Rating</span></div>
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://github.com/TechSageHub/Staff-Hub-System" target="_blank"
-                                class="btn-project-action primary">Live Demo</a>
-                            <a href="https://github.com/TechSageHub/Staff-Hub-System" target="_blank"
-                                class="btn-project-action outline"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="bento-item grid-project">
-                    <div class="project-visual">
-                        <img src="assets/img/mgqs_preview.png" alt="MGQS Portal" loading="lazy" decoding="async">
-                    </div>
-                    <div class="project-info">
-                        <h3 style="font-size:1.5rem; margin-bottom:10px;">MGQS Portal</h3>
-                        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">
-                            Education Portal built with ASP.NET Core MVC for student testing lifecycles.
-                        </p>
-                        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:15px;">
-                            <span class="tech-tag" style="font-size:0.7rem;">MVC</span>
-                            <span class="tech-tag" style="font-size:0.7rem;">SQL Server</span>
-                        </div>
-                        <div class="metric-grid" style="margin-top:0; grid-template-columns: repeat(2, 1fr);">
-                            <div class="metric-box" style="padding:10px;"><span class="metric-val"
-                                    style="font-size:1.1rem;">85%</span><span class="metric-lbl"
-                                    style="font-size:0.6rem;">Auto Quiz</span></div>
-                            <div class="metric-box" style="padding:10px;"><span class="metric-val">LMS</span><span
-                                    class="metric-lbl" style="font-size:0.6rem;">System</span></div>
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://github.com/TechSageHub?tab=repositories" target="_blank"
-                                class="btn-project-action primary">Live Demo</a>
-                            <a href="https://github.com/TechSageHub?tab=repositories" target="_blank"
-                                class="btn-project-action outline"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 3: Frontend Showcase -->
-                <div class="bento-item grid-project">
-                    <div class="project-visual">
-                        <img src="assets/img/sasham_preview.png" alt="Sasham Catering" loading="lazy" decoding="async">
-                    </div>
-                    <div class="project-info">
-                        <h3 style="font-size:1.5rem; margin-bottom:10px;">Sasham Catering</h3>
-                        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">
-                            Premium catering service website with modern UI/UX and responsive design.
-                        </p>
-                        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:15px;">
-                            <span class="tech-tag" style="font-size:0.7rem;">HTML5</span>
-                            <span class="tech-tag" style="font-size:0.7rem;">CSS3</span>
-                            <span class="tech-tag" style="font-size:0.7rem;">JavaScript</span>
-                        </div>
-                        <div class="metric-grid" style="margin-top:0; grid-template-columns: repeat(2, 1fr);">
-                            <div class="metric-box" style="padding:10px;"><span class="metric-val"
-                                    style="font-size:1.1rem;">100%</span><span class="metric-lbl"
-                                    style="font-size:0.6rem;">Responsive</span></div>
-                            <div class="metric-box" style="padding:10px;"><span class="metric-val"
-                                    style="font-size:1.1rem;">A+</span><span class="metric-lbl"
-                                    style="font-size:0.6rem;">UI/UX</span></div>
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://sasham-catering-service-website.vercel.app/" target="_blank"
-                                class="btn-project-action primary">Live Demo</a>
-                            <a href="https://github.com/TechSageHub?tab=repositories" target="_blank"
-                                class="btn-project-action outline"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 4: Node.js Assignment Submission System -->
-                <div class="bento-item grid-project">
-                    <div class="project-visual">
-                        <img src="assets/img/asms_preview.png" alt="Assignment Submission System" loading="lazy" decoding="async">
-                    </div>
-                    <div class="project-info">
-                        <h3 style="font-size:1.5rem; margin-bottom:10px;">FPI ASMS Portal</h3>
-                        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:15px;">
-                            Centralized academic portal for Federal Polytechnic Ilaro enabling students & lecturers to submit, grade, and manage assignments efficiently.
-                        </p>
-                        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:15px;">
-                            <span class="tech-tag" style="font-size:0.7rem;">Node.js</span>
-                            <span class="tech-tag" style="font-size:0.7rem;">Express.js</span>
-                            <span class="tech-tag" style="font-size:0.7rem;">REST API</span>
-                            <span class="tech-tag" style="font-size:0.7rem;">JavaScript</span>
-                        </div>
-                        <div class="metric-grid" style="margin-top:0; grid-template-columns: repeat(2, 1fr);">
-                            <div class="metric-box" style="padding:10px;"><span class="metric-val"
-                                    style="font-size:1.1rem;">100%</span><span class="metric-lbl"
-                                    style="font-size:0.6rem;">Workflow</span></div>
-                            <div class="metric-box" style="padding:10px;"><span class="metric-val"
-                                    style="font-size:1.1rem;">RBAC</span><span class="metric-lbl"
-                                    style="font-size:0.6rem;">Security</span></div>
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://assignment-submission-management-sy.vercel.app/" target="_blank"
-                                class="btn-project-action primary">Live Demo</a>
-                            <a href="https://github.com/TechSageHub/AssignmentSubmissionManagementSystem" target="_blank"
-                                class="btn-project-action outline"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="section wrap experience-section" id="experience">
+      <div class="section-heading reveal"><p class="comment">// Experience, in context</p><h2>Career <span>journey</span></h2><p class="section-lead">Selected professional experience grounded in the portfolio’s documented background.</p></div>
+      <div class="timeline">
+        <article class="timeline-entry reveal"><div class="timeline-marker"><span></span></div><div class="timeline-card"><div class="timeline-meta"><span class="eyebrow">SOFTWARE DEVELOPMENT</span><span>Current / recent</span></div><h3>Software Developer <span class="at-sign">@</span> Olos Gaming</h3><p>Contributing to software development work at Olos Gaming. Further project and responsibility details are available on request.</p><div class="tag-row"><span>.NET</span><span>Backend</span><span>Full stack</span></div></div></article>
+        <article class="timeline-entry reveal"><div class="timeline-marker"><span></span></div><div class="timeline-card"><div class="timeline-meta"><span class="eyebrow">SOFTWARE DEVELOPMENT</span><span>Professional experience</span></div><h3>Full Stack Software Developer <span class="at-sign">@</span> WhitteIntel Ltd</h3><p>Built billing and HR modules with .NET and worked on middleware for cross-platform data synchronization.</p><div class="tag-row"><span>.NET</span><span>Backend</span><span>Data integration</span></div></div></article>
+        <article class="timeline-entry reveal"><div class="timeline-marker"><span></span></div><div class="timeline-card"><div class="timeline-meta"><span class="eyebrow">SOFTWARE DEVELOPMENT</span><span>2024 — 2025</span></div><h3>Full Stack Developer <span class="at-sign">@</span> MGQS IT Research Lab</h3><p>Worked on the MGQS education portal, contributing to learning and assessment workflows and role-based digital tools.</p><div class="tag-row"><span>ASP.NET Core MVC</span><span>SQL Server</span><span>Clean Architecture</span></div></div></article>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <span class="section-meta">Let's Connect</span>
-            <h2 class="section-title">Build Together.</h2>
-
-            <div class="contact-grid-main">
-                <!-- Left Column (Info) -->
-                <div class="contact-info-col">
-                    <h3 style="font-size: 1.8rem; margin-bottom: 20px;">Ready to elevate your digital presence?</h3>
-                    <p style="color:var(--text-muted); margin-bottom: 40px; line-height: 1.8;">
-                        I specialize in transforming complex business requirements into high-performance, scalable
-                        software solutions. Let's discuss how I can contribute to your next project.
-                    </p>
-
-                    <div class="capability-grid">
-                        <div class="cap-item">
-                            <div class="cap-icon purple"><i class="fas fa-rocket"></i></div>
-                            <div class="cap-text">
-                                <strong>Performance</strong>
-                                <span>Optimized Systems</span>
-                            </div>
-                        </div>
-                        <div class="cap-item">
-                            <div class="cap-icon blue"><i class="fas fa-shield-alt"></i></div>
-                            <div class="cap-text">
-                                <strong>Security</strong>
-                                <span>Enterprise-Grade</span>
-                            </div>
-                        </div>
-                        <div class="cap-item">
-                            <div class="cap-icon orange"><i class="fas fa-cubes"></i></div>
-                            <div class="cap-text">
-                                <strong>Clean Architecture</strong>
-                                <span>SOLID, DDD, Patterns</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div style="margin-bottom: 50px;">
-                        <a href="https://wa.me/2348137250625" target="_blank" class="btn-obsidian"
-                            style="background: var(--accent-primary); color:white; padding: 12px 25px;">Let's Chat
-                            Tech</a>
-                        <span style="color:var(--text-muted); margin-left: 20px; font-size: 0.9rem;">Or message me
-                            directly — quick sync, no obligations.</span>
-                    </div>
-
-                    <div class="contact-direct-links">
-                        <div class="direct-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <label>Email</label>
-                                <a href="mailto:ilyasabdulmannan@gmail.com">ilyasabdulmannan@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="direct-item">
-                            <i class="fab fa-whatsapp"></i>
-                            <div>
-                                <label>WhatsApp</label>
-                                <a href="https://wa.me/2348137250625">+234 813 725 0625</a>
-                            </div>
-                        </div>
-                        <div class="direct-item">
-                            <i class="fab fa-linkedin"></i>
-                            <div>
-                                <label>LinkedIn</label>
-                                <a href="https://www.linkedin.com/in/abdul-mannan-ilyas-438197350/"
-                                    target="_blank">Abdul Mannan Ilyas</a>
-                            </div>
-                        </div>
-                        <div class="direct-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <label>Based in</label>
-                                <a href="javascript:void(0)">Lagos, Nigeria</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="quick-wins-mini">
-                        <strong>Quick wins I deliver:</strong>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Reduce API latency and database throughput</li>
-                            <li><i class="fas fa-check"></i> Modernize legacy .NET applications</li>
-                            <li><i class="fas fa-check"></i> Enforce high-standard Clean Architecture</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Right Column (Form) -->
-                <div class="contact-form-col">
-                    <form id="whatsapp-form" class="obsidian-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" id="form-name" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" id="form-email" placeholder="email@example.com" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Subject</label>
-                            <input type="text" id="form-subject" placeholder="Project Inquiry" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Message</label>
-                            <textarea id="form-message" rows="6" placeholder="Tell me about your tech challenges..."
-                                required></textarea>
-                        </div>
-                        <button type="submit" class="btn-obsidian-submit">
-                            <span>Send Message</span> <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
+    <section class="section wrap projects-section" id="projects">
+      <div class="section-heading reveal"><p class="comment">// Selected work</p><h2>Projects that <span>solve things</span></h2><p class="section-lead">A selection of verified work. No mockups or screenshots—just the product idea and the engineering behind it.</p></div>
+      <div class="project-toolbar reveal"><span>FILTER BY</span><div class="filter-group" role="group" aria-label="Filter projects"><button class="filter-button active" data-filter="all" aria-pressed="true">All projects</button><button class="filter-button" data-filter="frontend" aria-pressed="false">Frontend</button><button class="filter-button" data-filter="fullstack" aria-pressed="false">Full stack</button></div></div>
+      <div class="projects-grid">
+        <article class="project-card project-featured reveal" data-category="fullstack">
+          <div class="project-top"><span class="project-number">FEATURED PROJECT / 01</span><span class="project-type">FULL STACK · FINTECH</span></div>
+          <div class="featured-project-grid">
+            <div class="featured-copy"><h3>CashFlow <span>NG</span></h3><p class="featured-tagline">Personal finance, with a clearer picture.</p><p>A Nigerian personal financial management and intelligence platform for tracking transactions, organizing budgets, managing savings goals and understanding financial activity.</p>
+              <div class="project-links featured-links"><a href="https://cashflow-ng-frontend.vercel.app/" target="_blank" rel="noopener noreferrer">Live Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="https://github.com/TechSageHub/cashflow-ng" target="_blank" rel="noopener noreferrer">GitHub Repository <i class="fa-brands fa-github"></i></a></div>
             </div>
-        </div>
+            <div class="cashflow-scene" aria-label="CSS illustration of a financial dashboard"><div class="cashflow-dashboard">
+              <div class="dash-top"><span class="dash-brand"><i class="fa-solid fa-chart-pie"></i> cashflow<span>ng</span></span><span class="dash-avatar">AM</span></div>
+              <div class="dash-greeting">YOUR FINANCIAL OVERVIEW <span>↗</span></div>
+              <div class="dash-balance"><small>AVAILABLE BALANCE</small><strong>₦ 2,480,500</strong><span><i class="fa-solid fa-arrow-trend-up"></i> Your money, in view</span></div>
+              <div class="dash-lower"><div class="dash-spending"><small>MONTHLY SPENDING</small><div class="dash-bars"><i style="--bar:42%"></i><i style="--bar:70%"></i><i style="--bar:53%"></i><i style="--bar:88%"></i><i style="--bar:61%"></i><i style="--bar:76%"></i><i style="--bar:49%"></i></div><div class="dash-axis"><span>W1</span><span>W2</span><span>W3</span><span>W4</span></div></div><div class="dash-budget"><small>BUDGET HEALTH</small><div class="budget-ring"><span>72<small>%</small></span></div></div></div>
+              </div><span class="dash-float float-one"><i class="fa-solid fa-bullseye"></i> Savings goal</span><span class="dash-float float-two"><i class="fa-solid fa-arrow-right-arrow-left"></i> Transactions</span></div>
+          </div>
+          <div class="cashflow-meta"><div class="cashflow-stack"><h4>PROGRAMMING LANGUAGES</h4><div class="icon-stack"><span title="C#"><i class="devicon-csharp-plain colored"></i></span><span title="JavaScript"><i class="devicon-javascript-plain colored"></i></span><span title="TypeScript"><i class="devicon-typescript-plain colored"></i></span><span title="SQL"><i class="fa-solid fa-database"></i></span><span title="HTML5"><i class="devicon-html5-plain colored"></i></span><span title="CSS3"><i class="devicon-css3-plain colored"></i></span></div>
+                <h4>TECHNOLOGY STACK</h4><div class="cashflow-tech-tags"><span><i class="devicon-react-original colored"></i> React</span><span><i class="devicon-dotnetcore-plain colored"></i> ASP.NET Core / .NET</span><span><i class="fa-solid fa-layer-group"></i> Entity Framework Core</span><span><i class="fa-solid fa-code-branch"></i> REST API</span><span><i class="devicon-postgresql-plain colored"></i> PostgreSQL</span><span><i class="devicon-git-plain colored"></i> Git</span><span><i class="devicon-github-original"></i> GitHub</span><span><i class="devicon-swagger-plain colored"></i> Swagger / OpenAPI</span><span><i class="fa-solid fa-cubes"></i> Clean Architecture</span></div></div>
+              <div class="cashflow-features"><h4>PRODUCT SCOPE <span>completion status not verified</span></h4><p>Capabilities listed in the project brief; availability in the current build has not been confirmed.</p><div class="feature-pills"><span>Accounts</span><span>Transactions</span><span>Budgets</span><span>Savings goals</span><span>Reports &amp; analytics</span><span>Debt tracking</span><span>AI financial intelligence</span></div></div>
+          </div>
+        </article>
+        <article class="project-card reveal" data-category="fullstack"><div class="project-top"><span class="project-number">PROJECT / 02</span><span class="project-type">FULL STACK</span></div><div class="project-art art-staff" aria-hidden="true"><div class="art-window"><span></span><span></span><span></span><div class="art-lines"><i></i><i></i><i></i></div></div><i class="devicon-dotnetcore-plain colored art-icon"></i></div><h3>StaffHubSystem</h3><p>A workforce management system for staff workflows, attendance and secure document handling.</p><p class="problem-note"><b>Engineering focus</b> — bringing staff operations and document access into one application.</p><div class="tag-row"><span>.NET Core</span><span>EF Core</span></div><div class="project-links"><a href="https://github.com/TechSageHub/Staff-Hub-System" target="_blank" rel="noopener noreferrer">View repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></article>
+        <article class="project-card reveal" data-category="fullstack"><div class="project-top"><span class="project-number">PROJECT / 03</span><span class="project-type">FULL STACK</span></div><div class="project-art art-mgqs" aria-hidden="true"><div class="art-window"><span></span><span></span><span></span><div class="art-lines"><i></i><i></i><i></i></div></div><i class="fa-solid fa-graduation-cap art-icon"></i></div><h3>MGQS Education Portal</h3><p>An education portal for student learning and assessment workflows, built with ASP.NET Core MVC.</p><p class="problem-note"><b>Engineering focus</b> — supporting digital learning activities and assessments through a single portal.</p><div class="tag-row"><span>ASP.NET Core MVC</span><span>SQL Server</span></div><div class="project-links"><a href="https://mgqsng.org/" target="_blank" rel="noopener noreferrer">Live website <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="https://github.com/TechSageHub?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub profile <i class="fa-brands fa-github"></i></a></div></article>
+        <article class="project-card reveal" data-category="frontend"><div class="project-top"><span class="project-number">PROJECT / 04</span><span class="project-type">FRONTEND</span></div><div class="project-art art-sasham" aria-hidden="true"><div class="art-window"><span></span><span></span><span></span><div class="art-lines"><i></i><i></i><i></i></div></div><i class="devicon-html5-plain colored art-icon"></i></div><h3>Sasham Catering</h3><p>A responsive website for a catering service, presenting its offering through a focused web experience.</p><p class="problem-note"><b>Engineering focus</b> — making service information clear and accessible across screen sizes.</p><div class="tag-row"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div><div class="project-links"><a href="https://sasham-catering-service-website.vercel.app/" target="_blank" rel="noopener noreferrer">Live website <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="https://github.com/TechSageHub?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub profile <i class="fa-brands fa-github"></i></a></div></article>
+        <article class="project-card reveal henna-project" data-category="frontend"><div class="project-top"><span class="project-number">PROJECT / 05</span><span class="project-type">REAL-WORLD CLIENT PROJECT</span></div><div class="project-art art-henna" aria-hidden="true"><div class="henna-rosette"><i></i><i></i><i></i><i></i><i></i><i></i><b></b></div><i class="fa-solid fa-paintbrush art-icon"></i></div><h3>Henna by Ruffy</h3><p>A client website developed for a henna business owner, establishing the brand online and presenting its services to prospective customers.</p><p class="problem-note"><b>Frontend focus</b> — a responsive, mobile-friendly service experience shaped around the business’s brand.</p><div class="tag-row"><span>Frontend development</span><span>Responsive UI</span><span>Client project</span></div><div class="stack-pending"><i class="fa-solid fa-code"></i> Technology stack pending repository verification</div><div class="project-links"><a href="https://hennawebsite.onrender.com/" target="_blank" rel="noopener noreferrer">Live Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="https://github.com/TechSageHub/Henna_by_ruffy" target="_blank" rel="noopener noreferrer">GitHub Repository <i class="fa-brands fa-github"></i></a></div></article>
+        <article class="project-card reveal" data-category="fullstack"><div class="project-top"><span class="project-number">PROJECT / 06</span><span class="project-type">FULL STACK</span></div><div class="project-art art-asms" aria-hidden="true"><div class="art-window"><span></span><span></span><span></span><div class="art-lines"><i></i><i></i><i></i></div></div><i class="devicon-nodejs-plain colored art-icon"></i></div><h3>FPI Assignment Portal</h3><p>An assignment submission portal for Federal Polytechnic Ilaro students and lecturers.</p><p class="problem-note"><b>Engineering focus</b> — organizing assignment submission around student and lecturer workflows.</p><div class="tag-row"><span>Node.js</span><span>Express</span><span>REST API</span><span>JavaScript</span></div><div class="project-links"><a href="https://assignment-submission-management-sy.vercel.app/" target="_blank" rel="noopener noreferrer">Live website <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="https://github.com/TechSageHub/AssignmentSubmissionManagementSystem" target="_blank" rel="noopener noreferrer">View repository <i class="fa-brands fa-github"></i></a></div></article>
+      </div>
+      <p class="project-footnote">Some project source code is represented by the developer’s public repository index where a direct repository URL was not present in the existing portfolio.</p>
     </section>
 
-    <footer class="footer-main">
-        <div class="container">
-            <p>&copy; 2026 Ilyas Abdul Mannan. Engineered for Excellence & Authenticity.</p>
-        </div>
-    </footer>
-
-    <!-- Interactivity -->
-    <script src="js/main.js"></script>
+    <section class="section wrap contact-section" id="contact">
+      <div class="section-heading reveal"><p class="comment">// Have something in mind?</p><h2>Let’s build <span>something useful.</span></h2><p class="section-lead">For roles, collaborations or project conversations, reach out through any of these channels.</p></div>
+      <div class="contact-grid"><div class="contact-panel reveal"><div class="terminal-head"><span><i class="fa-solid fa-terminal"></i> contact.sh</span><span>● ● ●</span></div><div class="contact-list"><a href="mailto:ilyasabdulmannan@gmail.com"><i class="fa-regular fa-envelope"></i><span><small>EMAIL</small>ilyasabdulmannan@gmail.com</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="https://wa.me/2348137250625" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i><span><small>WHATSAPP</small>+234 813 725 0625</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="https://www.linkedin.com/in/abdul-mannan-ilyas-438197350/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i><span><small>LINKEDIN</small>Abdul Mannan Ilyas</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="https://github.com/TechSageHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i><span><small>GITHUB</small>TechSageHub</span><i class="fa-solid fa-arrow-up-right-from-square"></i></a></div><p class="contact-location"><i class="fa-solid fa-location-dot"></i> Lagos, Nigeria</p></div>
+        <div class="form-panel reveal"><p class="form-prompt"><span class="code-key">$</span> compose-message</p><form id="whatsapp-form"><div class="form-row"><label>Your name<input id="form-name" name="name" type="text" autocomplete="name" placeholder="Ada Okafor" required></label><label>Your email<input id="form-email" name="email" type="email" autocomplete="email" placeholder="ada@example.com" required></label></div><label>Subject<input id="form-subject" name="subject" type="text" placeholder="Project enquiry" required></label><label>Message<textarea id="form-message" name="message" rows="5" placeholder="A few details about what you have in mind…" required></textarea></label><button class="button button-primary send-button" type="submit">Continue in WhatsApp <i class="fa-brands fa-whatsapp"></i></button><p class="form-hint">Your message will open as a draft in WhatsApp.</p></form></div></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><a class="brand" href="#home"><span class="brand-mark">AM<span>.</span></span></a><p>© <span id="year">2026</span> Abdul Mannan. Built with care.</p><div class="footer-links"><a href="https://github.com/TechSageHub" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a href="https://www.linkedin.com/in/abdul-mannan-ilyas-438197350/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a><a href="mailto:ilyasabdulmannan@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a><a href="#home" class="back-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a></div></div></footer>
+  <script src="js/main.js" defer></script>
 </body>
-
 </html>
